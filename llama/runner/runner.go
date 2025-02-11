@@ -562,6 +562,7 @@ type Options struct {
 	MirostatTau      float32  `json:"mirostat_tau"`
 	MirostatEta      float32  `json:"mirostat_eta"`
 	Stop             []string `json:"stop"`
+	Grammar          string   `json:"grammar"`
 }
 
 type ImageData struct {
@@ -573,7 +574,6 @@ type ImageData struct {
 type CompletionRequest struct {
 	Prompt      string      `json:"prompt"`
 	Images      []ImageData `json:"image_data"`
-	Grammar     string      `json:"grammar"`
 	CachePrompt bool        `json:"cache_prompt"`
 
 	Options

@@ -700,7 +700,9 @@ func (s *llmServer) Completion(ctx context.Context, req CompletionRequest, fn fu
 		"image_data":        req.Images,
 		"cache_prompt":      true,
 	}
-
+	if req.Options.Grammar != "" {
+		request["grammar"] = req.Options.Grammar
+	}
 	if len(req.Format) > 0 {
 		switch string(req.Format) {
 		case `null`, `""`:

@@ -226,6 +226,7 @@ type Options struct {
 	MirostatTau      float32  `json:"mirostat_tau,omitempty"`
 	MirostatEta      float32  `json:"mirostat_eta,omitempty"`
 	Stop             []string `json:"stop,omitempty"`
+	Grammar          string   `json:"grammar,omitempty"`
 }
 
 // Runner options which must be set when the model is loaded into memory
@@ -606,7 +607,7 @@ func DefaultOptions() Options {
 		MirostatTau:      5.0,
 		MirostatEta:      0.1,
 		Seed:             -1,
-
+		Grammar:          "",
 		Runner: Runner{
 			// options set when the model is loaded
 			NumCtx:    2048,
